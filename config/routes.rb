@@ -6,7 +6,7 @@ FirehoseAppHbs::Application.routes.draw do
   root 'static_pages#index'
 
   resources :pics
-
+  resources :how_does_it_work
 
   
   # Example of regular route:

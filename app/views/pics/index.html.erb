@@ -1,5 +1,6 @@
-<% @pics.each do |pic| %>
-
+<% @pics.each_slice(4) do |slice| %>
+<div class= "row">
+<% slice.each do |pic| %>
 
 <div class="span2 offset1 smurfy custom-h5 text-center">
 	<h1 class="custom-h2">
@@ -7,10 +8,21 @@
 	<br/>
 	<h1 class="custom-h3">
 		<%= pic.subtitle %>
-	
+
+		<% if pic.image.present? %>
+	<%= image_tag pic.image %>
+	 
+	 <% else %>
+	 	<h1 class="custom-h5">
+	 	"No picture Uploaded"
+	 	<% end %>
+
+	<br/>
 	<h1 class="custom-h5">
 		<%= pic.message %>
+	</div>
 
+	<% end %>
 </div>
 
 <% end %>
